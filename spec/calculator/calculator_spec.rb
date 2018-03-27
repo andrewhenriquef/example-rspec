@@ -1,6 +1,6 @@
 require 'calculator'
 
-describe Calculator, ": Sobre a calculadora" do
+describe Calculator, ': Sobre a calculadora' do
   context '#sum' do
     subject(:calc) { described_class.new }
 
