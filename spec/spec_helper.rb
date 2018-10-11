@@ -13,10 +13,43 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+require_relative '../helpers/helper'
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+  # Helper methods module
+
+  # essas porras são hooks
+  # config.before(:suite) do
+  #   puts '>>>>>>>>> ANTES DE TODA A SUÌTE DE TESTES <<<<<<<<<<<<'
+  # end
+
+  # config.before(:context) do
+  #   puts '>>>>>>>>> ANTES DE TODOS OS TESTES <<<<<<<<<<<<'
+  # end
+
+  # config.after(:context) do
+  #   puts '>>>>>>>>> DEPOIS DE TODOS OS TESTES <<<<<<<<<<<<'
+  # end
+
+  # config.before(:example) do
+  #   puts '>>>>>>>>> ANTES DE CADA TESTE <<<<<<<<<<<<'
+  # end
+
+  # config.after(:example) do
+  #   puts '>>>>>>>>> DEPOIS DE CADA TESTE <<<<<<<<<<<<'
+  # end
+
+  # config.after(:suite) do
+  #   puts '>>>>>>>>> DEPOIS DE TODA A SUÌTE DE TESTES <<<<<<<<<<<<'
+  # end
+
+
+  config.include Helper
+
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
