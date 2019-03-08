@@ -23,6 +23,13 @@ describe 'Matchers de comparação' do
     expect(7).to be_between(2, 7).inclusive
   end
 
+  #this means that will evaluate all, after it will show all the failures together
+  it 'be_between inclusive / Falhas agregadas', :aggregate_failures do
+    expect(5).to be_between(2, 7).inclusive
+    expect(2).to be_between(2, 7).inclusive # match with 1
+    expect(7).to be_between(2, 7).inclusive # match with 8
+  end
+
   it 'be_between exclusive' do
     expect(5).to be_between(2, 7).exclusive
     expect(3).to be_between(2, 7).exclusive
