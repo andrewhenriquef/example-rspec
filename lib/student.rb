@@ -9,5 +9,6 @@ class Student
   end
 
   def bar
+    foo('teste')
   end
 end
